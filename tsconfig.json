@@ -1,7 +1,11 @@
 {
     "compilerOptions": {
+        "module": "NodeNext",
+        "moduleResolution": "NodeNext",
+        "target": "ES6",
         "rootDir": "ts",
         "outDir": ".dist",
-        "module": "ES6",
+        "strict": true,
+        "sourceMap": true,
     }
 }
