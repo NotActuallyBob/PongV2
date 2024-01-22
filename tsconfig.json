@@ -1,7 +1,7 @@
 {
     "compilerOptions": {
         "rootDir": "ts",
-        "outDir": "dist",
-        "module": "commonjs",
+        "outDir": ".dist",
+        "module": "ES6",
     }
 }
