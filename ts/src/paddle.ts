@@ -1,13 +1,15 @@
-export class Paddle {
-    private positionX: number;
-    private positionY: number; 
+import { Vector2 } from "./vector2.js";
 
-    constructor(positionX: number, positionY: number) {
-        this.positionX = positionX;
-        this.positionY = positionY;    
-    } 
+export class Paddle {
+    private position: Vector2;
+    private size: Vector2;
+
+    constructor(position: Vector2) {
+        this.position = position;
+        this.size = new Vector2(20, 100);
+    }
 
     public draw(ctx: CanvasRenderingContext2D) {
-        ctx.fillRect(this.positionX, this.positionY, 20, 100); 
+        ctx.fillRect(this.position.getX(), this.position.getY(), this.size.getX(), this.size.getY()); 
     }
 }
