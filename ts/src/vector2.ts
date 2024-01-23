@@ -16,7 +16,7 @@ export class Vector2 {
     }
 
     public move(move: Vector2) {
-        this.x = move.getX();
-        this.y = move.getY();
+        this.x += move.getX();
+        this.y += move.getY();
     }
 }
