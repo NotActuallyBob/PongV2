@@ -1,4 +1,6 @@
+import { Ball } from "./ball.js";
 import { Paddle } from "./paddle.js";
+import { Vector2 } from "./vector2.js";
 
 export class Game {
     private canvas: HTMLCanvasElement;
@@ -9,14 +11,16 @@ export class Game {
 
     private leftPaddle: Paddle;
     private rightPaddle: Paddle;
+    private ball: Ball;
 
-    constructor(canvas: HTMLCanvasElement, leftPaddle: Paddle, rightPaddle: Paddle) {
+    constructor(canvas: HTMLCanvasElement) {
         this.canvas = canvas;
         this.initCanvas();
         this.context = canvas.getContext("2d") as CanvasRenderingContext2D;
 
-        this.leftPaddle = leftPaddle;
-        this.rightPaddle = rightPaddle;
+        this.leftPaddle = new Paddle(canvas, new Vector2(50, 0), "left"); 
+        this.rightPaddle = new Paddle(canvas, new Vector2(950, 0), "right"); 
+        this.ball = new Ball(this.canvas, this.leftPaddle, this.rightPaddle);
 
         this.update = this.update.bind(this);
     }
@@ -45,6 +49,9 @@ export class Game {
             this.rightPaddle.moveDown();
         }
 
+        this.ball.move();
+
+        this.ball.draw(this.context);
         this.leftPaddle.draw(this.context);
         this.rightPaddle.draw(this.context);
     }

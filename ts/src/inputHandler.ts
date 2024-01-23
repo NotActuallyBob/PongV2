@@ -1,8 +1,9 @@
 export class InputHandler {
-    private keyNameForUp: string;
-    private keyNameForDown: string
     public isUpPressed: boolean;
     public isDownPressed: boolean;
+
+    private keyNameForUp: string;
+    private keyNameForDown: string
 
     constructor (keyNameForUp: string, keyNameForDown: string) {
         this.keyNameForUp = keyNameForUp;
@@ -16,9 +17,6 @@ export class InputHandler {
     }
 
     private handleKeyDown(event: KeyboardEvent) {
-        // Handle keydown events here
-        // For example, you can check the key code and perform actions accordingly
-        
         switch (event.code) {
             case this.keyNameForUp:
                 this.isUpPressed = true;
@@ -32,8 +30,6 @@ export class InputHandler {
     }
 
     private handleKeyUp(event: KeyboardEvent) {
-        // Handle keydown events here
-        // For example, you can check the key code and perform actions accordingly
         switch (event.code) {
             case this.keyNameForUp:
                 this.isUpPressed = false;

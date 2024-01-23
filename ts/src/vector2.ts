@@ -19,4 +19,19 @@ export class Vector2 {
         this.x += move.getX();
         this.y += move.getY();
     }
+
+    public setY(y: number) {
+        this.y = y;
+    }
+
+    public setX(x: number) {
+        this.x = x;
+    }
+
+    public negateX() {
+        this.x *= -1;
+    }
+    public negateY() {
+        this.y *= -1;
+    }
 }
